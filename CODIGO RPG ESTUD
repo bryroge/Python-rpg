@@ -1,0 +1,138 @@
+''' RPG '''
+
+print('-'*20)
+print(' '*3, 'Bem vindo', ' '*3)
+print(' ')
+import random
+
+
+def menu():
+    print(' ')
+    print(' RPG GAME. ESCOLHA SUA OPÇÂO')
+    print(' ')
+    print('1 - criar personagem')
+    print('2 - iniciar jogo')
+    print('3 - continuar jogo')
+    menuop = int(input(''))
+    return menuop
+
+
+            
+
+
+def monster():
+
+    class Goblin:
+        vidain = 50
+        magiain = 10
+        forçain = 25
+        inteligenciain = 5
+        descrição = ('Goblin')
+
+    class Dragon:
+        vidain = 50
+        magiain = 10
+        forçain = 25
+        inteligenciain = 5
+        descrição = ('Dragon')
+
+    list_inimigo = ['goblin', 'dragon']
+    inimigo = random.choice(list_inimigo)
+    if inimigo == ('goblin'):
+        ini = Goblin()
+    elif inimigo == ('Dragon'):
+        ini = Dragon()
+    print(inimigo)
+    
+
+def novo_personagem():
+    class mago:
+        vida = 6
+        magiap = 5
+        força = 2.5
+        inteligencia = 4
+    class guerreiro:
+        vida = 8
+        magiap = 2
+        força = 3.5
+        inteligencia = 1.5
+    nome = input('Escolha seu nome: ')
+    classe = input('Olá {}, dentre as classes: Mago, Guerreiro, Nefrin e Amazona, qual você escolhe?'.format(nome))
+    if classe == ('mago'):
+        player = mago()
+        '''global vida, magiap, força, inteligencia
+        vida = 6
+        magiap = 5
+        força = 2.5
+        inteligencia = 4
+        return vida, magiap, força, inteligencia'''
+    print('Eis que nasce o grande {}, e eles o chamam {}. Vá, Grande {}, Livre o mundo do mal'.format(classe, nome, classe))
+    
+def ataque():
+    player = novo_personagem()
+    ini = monster()
+    ataque = input('Não!! um {} apareceu, vamos atacalo, você pode usar as mão ou magia, ataque agora, ele vai nos destruir'.format(ini))
+    while vidain > 0:
+        if ataque == ('magia'):
+            print('Você jogou uma bola de fogo no {}'.format(inimigo))
+            dados = random.randint(1, 12)
+            ataq = (magiap + inteligencia) / 2 * dados
+            print('Você tirou {} nos dados,  seu ataque causou {} de danos no {}'.format(dados, ataq, inimigo))
+            vidain -= ataq
+            if vidain <= 0:
+                print('O {} morreu'.format(inimigo))
+            else:
+                ataque = input('o {} ainda tem {} de vida, ataque novamente, AGORA!!!'.format(inimigo, vidain))
+
+'''list_inimigo = ['goblin', 'dragon']
+    inimigo = random.choice(list_inimigo)
+    print(inimigo)
+    if inimigo == ('goblin'):
+        vidain = 80
+        magiain = 20
+        forçain = 30
+        inteligenciain = 10
+    elif inimigo == ('dragon'):
+        vidain = 100
+        magiain = 30
+        forçain = 40
+        inteligenciain = 15
+def mago():
+    vida = 60
+    magia = 50
+    força = 25
+    inteligencia = 40
+
+def combate():
+    list_inimigo = ['goblin', 'dragon']
+    inimigo = random.choice(list_inimigo)
+    print(inimigo)
+    if inimigo == ('goblin'):
+        vidain = 80
+        magiain = 20
+        forçain = 30
+        inteligenciain = 10
+    elif inimigo == ('dragon'):
+        vidain = 100
+        magiain = 30
+        forçain = 40
+        inteligenciain = 15    
+        
+    ataque = input('Não!! um {} apareceu, vamos atacalo, você pode usar as mão ou magia, ataque agora, ele vai nos destruir'.format(inimigo))
+    while vidain >0:
+        if ataque == ('magia'):
+            print('Você jogou uma bola de fogo no {}'.format(inimigo))
+            dados = random.randint(1, 12)
+            ataq =(magiap+inteligencia)/2 * dados
+            print('Você tirou {} nos dados,  seu ataque causou {} de danos no {}'.format(dados, ataq, inimigo))
+            vidain -=ataq
+            if vidain <=0:
+                print('O {} morreu'.format(inimigo))
+            else:
+                ataque = input('o {} ainda tem {} de vida, ataque novamente, AGORA!!!'.format(inimigo, vidain))'''
+
+
+while True:
+    menuop = menu()
+    if menuop == 1:
+        ataque()
