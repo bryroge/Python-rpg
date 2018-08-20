@@ -2,13 +2,12 @@ import classemonstros
 import classeplayer
 
 ''' RPG '''
- 
-print('-'*20)
-print(' '*3, 'Bem vindo', ' '*3)
+
+print('-' * 20)
+print(' ' * 3, 'Bem vindo', ' ' * 3)
 print(' ')
- 
- 
- 
+
+
 def menu():
     print(' ')
     print(' RPG GAME. ESCOLHA SUA OPÇÂO')
@@ -20,8 +19,6 @@ def menu():
     return menuop
 
 
-
-    
 while True:
     menuop = menu()
     if menuop == 1:
@@ -43,7 +40,7 @@ while True:
             print('magia: ', playermg.magiap)
             print('inteligencia: ', playermg.inteligencia)
             import main
-        while ver !=('mago') or ver != ('guerreiro'):
+        while ver != ('mago') or ver != ('guerreiro'):
             ver = input('Classe não existe, digite uma classe valida (mago, guerreiro)')
             if ver == ('mago'):
                 playermg = classeplayer.player.mago
@@ -62,5 +59,5 @@ while True:
     if menuop == 3:
         print('em construção')
         import main
-            
-        
+
+
