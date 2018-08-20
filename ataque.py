@@ -23,12 +23,12 @@ while ini.vidain > 0:
             print('Você tirou {} nos dados.'.format(dados))
             ataque = input(' Você errou o ataque, ataque novamente, e vê se não erra dessa vez!!')
         elif ataque >= 0:
-            print('Você tirou {} nos dados,  seu ataque causou {} de danos no {}'.format(dados, ataque, inimigo))
+            print('Você tirou {} nos dados,  seu ataque causou {:.2f} de danos no {}'.format(dados, ataque, inimigo))
             ini.vidain -= ataque
             if ini.vidain <= 0:
                 print('O {} morreu'.format(inimigo))
             else:
-                ataque = input('o {} ainda tem {} de vida, ataque novamente, AGORA!!!'.format(inimigo, ini.vidain))
+                ataque = input('o {} ainda tem {:.2f} de vida, ataque novamente, AGORA!!!'.format(inimigo, ini.vidain))
 
 
 

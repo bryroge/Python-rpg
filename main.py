@@ -32,6 +32,7 @@ while True:
             print('Força: ', playermg.força)
             print('magia: ', playermg.magiap)
             print('inteligencia: ', playermg.inteligencia)
+            print('defesa: ', playermg.defesa)
             import main
         elif ver == ('guerreiro'):
             playermg = classeplayer.player.guerreiro
@@ -39,6 +40,7 @@ while True:
             print('Força: ', playermg.força)
             print('magia: ', playermg.magiap)
             print('inteligencia: ', playermg.inteligencia)
+            print('defesa: ', playermg.defesa)
             import main
         while ver != ('mago') or ver != ('guerreiro'):
             ver = input('Classe não existe, digite uma classe valida (mago, guerreiro)')
@@ -48,6 +50,7 @@ while True:
                 print('Força: ', playermg.força)
                 print('magia: ', playermg.magiap)
                 print('inteligencia: ', playermg.inteligencia)
+                print('defesa: ', playermg.defesa)
                 import main
             elif ver == ('guerreiro'):
                 playermg = classeplayer.player.guerreiro
@@ -55,6 +58,7 @@ while True:
                 print('Força: ', playermg.força)
                 print('magia: ', playermg.magiap)
                 print('inteligencia: ', playermg.inteligencia)
+                print('defesa: ', playermg.defesa)
                 import main
     if menuop == 3:
         print('em construção')
