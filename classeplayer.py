@@ -16,7 +16,7 @@ class player():
         força = 4.5
         defesa = 3
         inteligencia = 1.5
-
+        atk = ((força * 2 + magiap / 2) / 2) + força * 0.1 + magiap * 0.05
 
     class Amazona:
         nome = ('Amazona')
