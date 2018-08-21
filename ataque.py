@@ -3,17 +3,18 @@ import classemonstros
 import classeplayer
 import novopersonagem
 import time
+
 player = novopersonagem.player
 lista = ['orc', 'dragon']
 inimigo = random.choice(lista)
-print(inimigo)
+#print(inimigo)
 if inimigo == ('orc'):
     ini = classemonstros.monsters.orc
 elif inimigo == ('dragon'):
     ini = classemonstros.monsters.dragão
 ataque = input('Não!! um {} apareceu, vamos atacalo, você pode usar as mãos ou magia, ataque agora, ele vai nos destruir'.format(inimigo))
-print('vida ini', ini.vidain)
-print('ataque player', player.atk)
+#print('vida ini', ini.vidain)
+#print('ataque player', player.atk)
 while ini.vidain > 0 and player.vida > 0:
     
     if ataque == ('magia'):
@@ -26,10 +27,10 @@ while ini.vidain > 0 and player.vida > 0:
             print('O {} esta atacando... Nós vamos morrer!!!'.format(inimigo))
             time.sleep(2)
             danoini = (ini.força + ini.magiain) / 8 * dados
-            print('dano ini', danoini)
+            #print('dano ini', danoini)
             recebdano = danoini - player.defesa + player.força
             player.vida -= recebdano
-            print('dados:', dados)
+            #print('dados:', dados)
             if player.vida <= 0:
                 print('O {} causou um dano de {}, e você caiu morto, bem, parece que você não era tão poderoso assim...'.format(inimigo, recebdano, player.vida))
             else:
@@ -45,8 +46,8 @@ while ini.vidain > 0 and player.vida > 0:
                 print('O {} esta atacando... Nós vamos morrer!!!'.format(inimigo))
                 time.sleep(2)
                 danoini = (ini.força + ini.magiain) / 8 * dados
-                print('dados:', dados)
-                print('dano ini', danoini)
+                #print('dados:', dados)
+                #print('dano ini', danoini)
                 recebdano = danoini - player.defesa + player.força
                 player.vida -= recebdano
                 if player.vida <= 0:
@@ -55,6 +56,25 @@ while ini.vidain > 0 and player.vida > 0:
                     print('O {} causou um dano de {}, você ainda tem {} de vida'.format(inimigo, recebdano, player.vida))
                     ataque = input('Ataque novamente, AGORA!!!')
 
+    elif ataque == ('heal'):
+        dados = random.randint(1, 12)
+        print('Você usou uma magia de cura')
+        print('Você tirou {} nos dados'.format(dados))
+        heal = player.magiap + player.inteligencia / 2 * dados
+        player.vida += heal
+        print('você curou {}, você tem agora {} de vida'.format(heal, player.vida))
+        print('O {} esta atacando... Nós vamos morrer!!!'.format(inimigo))
+        time.sleep(2)
+        danoini = (ini.força + ini.magiain) / 8 * dados
+                #print('dados:', dados)
+                #print('dano ini', danoini)
+        recebdano = danoini - player.defesa + player.força
+        player.vida -= recebdano
+        if player.vida <= 0:
+            print('O {} causou um dano de {}, e você caiu morto, bem, parece que você não era tão poderoso assim...'.format(inimigo, recebdano, player.vida))
+        else:
+            print('O {} causou um dano de {}, você ainda tem {} de vida'.format(inimigo, recebdano, player.vida))
+            ataque = input('Ataque, ataque, ATAQUE!!!')        
         
 '''while player.vida > 0:       
             print('O {} esta atacando... Nós vamos morrer!!!'.format(inimigo))
