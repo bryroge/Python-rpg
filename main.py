@@ -35,7 +35,7 @@ while True:
             print('magia: ', playermg.magiap)
             print('inteligencia: ', playermg.inteligencia)
             print('defesa: ', playermg.defesa)
-            
+
         elif ver == ('guerreiro'):
             playermg = classeplayer.player.guerreiro
             print('vida: ', playermg.vida)
@@ -63,5 +63,6 @@ while True:
     if menuop == 3:
         print('em construção')
         
+
 
 

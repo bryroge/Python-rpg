@@ -12,3 +12,4 @@ class monsters():
         magiain = 7
         defesa = 12
         defe = defesa / 2 * força / 2
+

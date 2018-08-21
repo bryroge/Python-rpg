@@ -13,10 +13,11 @@ if inimigo == ('orc'):
 elif inimigo == ('dragon'):
     ini = classemonstros.monsters.dragão
 ataque = input('Não!! um {} apareceu, vamos atacalo, você pode usar as mãos ou magia, ataque agora, ele vai nos destruir'.format(inimigo))
+
 #print('vida ini', ini.vidain)
 #print('ataque player', player.atk)
-while ini.vidain > 0 and player.vida > 0:
-    
+while ini.vidain > 0:
+
     if ataque == ('magia'):
         dados = random.randint(1, 12)
         print('Você jogou uma bola de fogo no {}'.format(inimigo))         
@@ -87,5 +88,3 @@ while ini.vidain > 0 and player.vida > 0:
                 print('O {} causou um dano de {}, e você caiu morto, bem, parece que você não era tão poderoso assim...'.format(inimigo, recebdano, player.vida))
             else:
                 print('O {} causou um dano de {}, você ainda tem {} de vida'.format(inimigo, recebdano, player.vida))'''
-
-
